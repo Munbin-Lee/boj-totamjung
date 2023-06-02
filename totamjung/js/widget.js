@@ -560,11 +560,11 @@ onload = () => {
     createLockButtonListener();
 }
 
-// Random Defense Hotkey Listener (Alt + {num})
+// Random Defense Hotkey Listener (Ctrl + Alt + {num})
 let isPressed = {};
 onkeydown = onkeyup = (e) => {
     isPressed[e.key] = e.type === 'keydown';
-    if (!isNaN(e.key) && isPressed['Alt'] && !isRandomBusy) {
+    if (!isNaN(e.key) && isPressed['Ctrl'] && isPressed['Alt'] && !isRandomBusy) {
         isRandomBusy = true;
         
         doRandomDefense(e.key);

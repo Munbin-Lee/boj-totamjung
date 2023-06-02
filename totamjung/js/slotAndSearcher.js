@@ -66,7 +66,7 @@ const showInfoAndSaveNo = no => {
             slotQuery.innerText = res[no].query;
         }
 
-        hotkeyText.innerText = `단축키: Alt + ${no}`;
+        hotkeyText.innerText = `단축키: Ctrl + Alt + ${no}`;
 
         chrome.runtime.sendMessage({ msg: 'saveSlotNo', no: no }, (res) => {
             if (res.result === 'FAIL')
